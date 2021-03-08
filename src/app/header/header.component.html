@@ -6,19 +6,23 @@
     <!-- Menu hamburguer-->
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <li><a href="#">Receitas</a></li>
-        <li><a href="#">Lista de produtos</a></li>
+        <li routerLinkActive="active">
+          <a routerLink="/recipes">Receitas</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">Lista de produtos</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a 
-            href="#"
+        <li class="dropdown" appDropDown>
+          <a
+            style="cursor: pointer;" 
             class="dropdown-toggle"
             role="button">
             Mais<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Salvar dados</a></li>
-            <li><a href="#">Carregar dados</a></li>
+            <li><a style="cursor: pointer;" >Salvar dados</a></li>
+            <li><a style="cursor: pointer;" >Carregar dados</a></li>
           </ul>
         </li>
       </ul>
