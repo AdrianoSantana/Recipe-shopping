@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "recipe-shopping"
+  "defaultProject": "recipe-shopping",
+  "cli": {
+    "analytics": false
+  }
 }

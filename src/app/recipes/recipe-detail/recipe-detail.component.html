@@ -32,8 +32,8 @@
             (click)="addIngredientsToShop(recipe)"
           >Adicionar ingredientes a lista de compras</a>
         </li>
-        <li><a style="cursor:pointer;">Editar receita</a></li>
-        <li><a style="cursor:pointer;">Deletar receita</a></li>
+        <li><a style="cursor:pointer;" (click)="onEditRecipe()">Editar receita</a></li>
+        <li><a style="cursor:pointer;"(click)="deleteRecipe(recipe)">Deletar receita</a></li>
       </ul>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form [formGroup]="ingredientForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Nome</label>
@@ -9,7 +9,7 @@
             id="name" 
             name="ingredientName"
             class="form-control"
-            [(ngModel)]="ingredientName"
+            formControlName="ingredientName"
           >
         </div>
         <div class="col-sm-2 form-group">
@@ -19,19 +19,28 @@
             id="amount"
             name="amount"
             class="form-control"
-            [(ngModel)]="ingredientAmount"
+            formControlName="amount"
           >
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 ">
           <button 
-            class="btb btn-success"
-            type="submit"
+            class="btn btn-success"
+            type="button"
             (click)= "addIngredient()"
-          >Adicionar</button>
-          <button class="btb btn-danger" type="button">Deletar</button>
-          <button class="btb btn-primary" type="button">Clear</button>
+            [disabled]="!ingredientForm.valid"
+          >{{ editMode === false ? 'Adicionar' : 'Atualizar' }}</button>
+          <button *ngIf="editMode"
+            class="btn btn-danger" 
+            type="button"
+            (click)="onDelete()"
+          >Deletar</button>
+          <button 
+            class="btn btn-primary" 
+            type="button"
+            (click)="onClear()"
+          >Clear</button>
         </div>
       </div>
     </form>
